@@ -2,10 +2,6 @@ def salida ():
         print ("El programa se ha cerrado con exito :)")
         return False
 
-
-
-
-
 def menu():
     on = True
     while on:
