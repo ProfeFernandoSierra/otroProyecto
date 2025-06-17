@@ -1,46 +1,34 @@
-lista = []
+import os
+
+
 
 def salida ():
         print ("El programa se ha cerrado con exito :)")
-        return False
-
-def menu():
-    on = True
-    while on:
-        print("\t\tMENU AGENDA DE CONTACTOS\n")
-        print("1) Agregar un contacto: nombre, teléfono, email.")
-        print("2) Listar contactos: mostrar todos los contactos guardados.")
-        print("3) Buscar un contacto por nombre.")
-        print("4) Eliminar un contacto.")
-        print("5) Salir del programa.\n")
-        try:
-            opcion = int(input("Seleccione una opcion\n"))
-            if opcion == 1:
-                print("Agregar contacto")
-                agregar_usuario(lista)
-            elif opcion == 2:
-                print("a")
-            elif opcion == 3:
-                print("a")
-            elif opcion == 4:
-                print("a")
-            elif opcion == 5:
-               on = salida()
-        except:
-            print("Ingrese carecteres numericos")
+        return False    
             
 def agregar_usuario(lista):
     nombre = ""
     while len(nombre) == 0:
         nombre = input("ingrese nombre\n")
+    lista.append(nombre)
     telefono = "" 
     while len(telefono) < 9:
         telefono = input("ingrese telefono ej:977777777\n")
+    lista.append(telefono)
     email = ""
-    while not "@" in email and len(email) <= 5 :
+    while not "@" in email or len(email) <= 5 :
         email = input("ingrese correo\n") 
-    lista.append(nombre, telefono, email)
-    print("usuario agregado con exito")      
+    lista.append(email)
+    print("usuario agregado con exito")
+    
+def mostrar_usuario (lista):
+    if len (lista) == 0:
+        print("No hay contactos registrados todavia")
+    else:
+        for contacto in lista:
+            print(f"contacto: {contacto}")
+        os.system("Pause")
+     
 # La aplicación debe permitir al usuario:
 # 1.	Agregar un contacto: nombre, teléfono, email.
 # 2.	Listar contactos: mostrar todos los contactos guardados.
