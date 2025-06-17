@@ -26,7 +26,8 @@ def menu():
         except:
             print("Ingrese carecteres numericos")
             
-            
+def agregar_usuario():
+    print()           
 # La aplicación debe permitir al usuario:
 # 1.	Agregar un contacto: nombre, teléfono, email.
 # 2.	Listar contactos: mostrar todos los contactos guardados.
