@@ -29,6 +29,27 @@ def mostrar_usuario (lista):
             print(f"contacto: {contacto}")
         os.system("Pause")
      
+def buscar_contacto(lista):
+    if len(lista) == 0:
+        print("No hay contactos registrados todavia")
+        return
+    
+    nombre_buscar = input("Ingrese el nombre a buscar: ").strip().lower()
+    contactos_encontrados = []
+    
+    for contacto in lista:
+        if nombre_buscar in contacto['nombre'].lower():
+            contactos_encontrados.append(contacto)
+    
+    if len(contactos_encontrados) == 0:
+        print("No se encontraron contactos con ese nombre")
+    else:
+        print("\n--- CONTACTOS ENCONTRADOS ---")
+        for i, contacto in (contactos_encontrados, 1):
+            print(f"{i}. Nombre: {contacto['nombre']}")
+            print(f"   Telefono: {contacto['telefono']}")
+            print(f"   Email: {contacto['email']}")
+
 # La aplicación debe permitir al usuario:
 # 1.	Agregar un contacto: nombre, teléfono, email.
 # 2.	Listar contactos: mostrar todos los contactos guardados.
